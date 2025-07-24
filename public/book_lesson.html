@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Ippico Omni Dreamers - Prenota Lezione</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="/script/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo-container">
+                <img src="/img/logo.png" class="navbar-logo-img" alt="Logo del Centro Ippico Omni Dreamers">
+                <div class="navbar-logo-text-container">
+                    <span class="navbar-logo-text">Centro Ippico<br>OMNI DREAMERS</span>
+                </div>
+            </div>
+            <span class="hamburger-menu-icon" onclick="toggleMenu()">menu</span>
+            <ul class="menu">
+                <li class="menu-item"><a href="/" class="menu-anchor">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                <li class="menu-item"><a href="/about.html" class="menu-anchor">
+                        <span class="menu-text">Chi Siamo</span>
+                    </a></li>
+                <li class="menu-item">
+                    <a href="/activities.html" class="menu-anchor">
+                        <span class="menu-text">Attività</span>
+                    </a>
+                </li>
+                <li class="menu-item-current"><a href="/book_lesson.html" class="menu-anchor">
+                        <span class="menu-text">Prenota Lezione</span>
+                    </a></li>
+                <li class="menu-item"><a href="/contact.html" class="menu-anchor">
+                        <span class="menu-text">Contatti</span>
+                    </a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-text-container">
+                <h1 class="hero-title"> Prenota la tua prima lezione </h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <section id="booking-section">
+            <div class="booking-info-container">
+                <h2>Registrati</h2>
+                <p>Compila il modulo sottostante per registrarti e prenotare la tua lezione
+                    di equitazione.</p>
+                <form id="booking-form" method="POST">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="surname">Cognome:</label>
+                    <input type="text" id="surname" name="surname" required>
+
+                    <label for="phone-number">Numero di telefono:</label>
+                    <input type="text" id="phone-number" name="phone-number" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="confirm-password">Conferma Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <label for="riding-experience">Esperienza:</label>
+                    <select id="riding-experience" name="riding-experience">
+                        <option value="Principiante">Principiante</option>
+                        <option value="Intermedio">Intermedio</option>
+                        <option value="Avanzato">Avanzato</option>
+                        <option value="Esperto">Esperto</option>
+                    </select>
+
+                    <label for="date">Data della Lezione:</label>
+                    <input type="date" id="date" name="date" required>
+                    <label for="time">Orario della Lezione:</label>
+                    <input type="time" id="time" name="time" required>
+
+                    <label for="comments">Commenti:</label>
+                    <textarea id="comments" name="comments"
+                        placeholder="Inserisci eventuali commenti o richieste speciali..."></textarea>
+                    <button type="submit" id="booking-submit-button" class="submit-button"> Invia Prenotazione</button>
+                </form>
+            </div>
+            <img src="/img/book_lesson/kid.png" alt="Immagine di un bambino che cavalca un pony">
+        </section>
+        <section id="login-section">
+            <div class="login-text-container">
+                <h2>Hai già un account?</h2>
+                <p>Accedi per gestire le tue prenotazioni e crearne di nuove.</p>
+            </div>
+            <form id="login-form" method="POST">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button type="submit" id="login-submit-button" class="submit-button">Accedi</button>
+            </form>
+            <div class="admin-login-text-container">
+                <p class="admin-login-text">Se sei un amministratore, <a id="admin-login-link" href="">clicca qui per
+                        accedere al pannello di amministrazione</a>.</p>
+            </div>
+        </section>
+    </div>
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-middle-container">
+                <span class="footer-partners-text">I nostri partner:</span>
+                <div class="footer-partners-logos-container">
+                    <a href="https://www.fise.it/" target="_blank">
+                        <img src="/img/partner/fise.png" class="footer-partner-logo" alt="Partner Fise">
+                    </a>
+                    <a href="https://www.opesequitazione.it/" target="_blank">
+                        <img src="/img/partner/opes.png" class="footer-partner-logo" alt="Partner Opes">
+                    </a>
+                    <a href="https://www.asca.pet/" target="_blank">
+                        <img src="/img/partner/asca.png" class="footer-partner-logo" alt="Partner Asca">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right-container">
+                <ul class="footer-links-container">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about.html" class="footer-link">Chi Siamo</a></li>
+                    <li><a href="/activities.html" class="footer-link">Attività</a></li>
+                    <li><a href="/book_lesson.html" class="footer-link">Prenota Lezione</a></li>
+                    <li><a href="/contact.html" class="footer-link">Contatti</a></li>
+                </ul>
+                <div class="footer-socials-container">
+                    <a href="https://www.facebook.com/" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/facebook.png" class="footer-social-icon" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/instagram.png" class="footer-social-icon" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copyright-text">© 2025 Centro Ippico Omni Dreamers. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Amministratore - Centro Ippico Omni Dreamers</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="/admin/script/admin_script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo-container">
+                <img src="/img/logo.png" class="navbar-logo-img" alt="Logo del Centro Ippico Omni Dreamers">
+                <div class="navbar-logo-text-container">
+                    <span class="navbar-logo-text">Centro Ippico<br>OMNI DREAMERS</span>
+                </div>
+            </div>
+            <span class="hamburger-menu-icon" onclick="toggleMenu()">menu</span>
+            <ul class="menu">
+                <li class="menu-item"><a href="/" class="menu-anchor">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                <li class="menu-item"><a href="/about.html" class="menu-anchor">
+                        <span class="menu-text">Chi Siamo</span>
+                    </a></li>
+                <li class="menu-item">
+                    <a href="/activities.html" class="menu-anchor">
+                        <span class="menu-text">Attività</span>
+                    </a>
+                </li>
+                <li class="menu-item-current"><a href="/book_lesson.html" class="menu-anchor">
+                        <span class="menu-text">Prenota Lezione</span>
+                    </a></li>
+                <li class="menu-item"><a href="/contact.html" class="menu-anchor">
+                        <span class="menu-text">Contatti</span>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Dashboard Amministratore</h1>
+        </div>
+
+        <h2>Gestione Prenotazioni</h2>
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Email</th>
+                        <th>Data</th>
+                        <th>Ora</th>
+                        <th>Descrizione</th>
+                        <th>Stato</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-table">
+                    <tr>
+                        <td>Caricamento prenotazioni...</td>
+                        <td colspan="7"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Messaggi Ricevuti</h2>
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Utente</th>
+                        <th>Email</th>
+                        <th>Data</th>
+                        <th>Contenuto</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody id="messages-table">
+                    <tr>
+                        <td>Caricamento messaggi...</td>
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Richieste Ricevute</h2>
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Data</th>
+                        <th>Contenuto</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-table">
+                    <tr>
+                        <td>Caricamento richieste...</td>
+                        <td colspan="4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="overlay" class="overlay">
+            <div id="reply-popup">
+                <form id="reply-form">
+                    <h2>Rispondi al messaggio</h2>
+                    <label for="reply-user">Utente:</label>
+                    <input type="text" id="reply-user" name="reply-user" disabled>
+                    <label for="reply-content">Contenuto:</label>
+                    <textarea id="reply-content" name="reply-content" required></textarea>
+                    <button type="button" id="close-reply-modal" class="cancel-button">Annulla</button>
+                    <button type="submit" id="send-reply" class="submit-button">Invia Risposta</button>
+                </form>
+            </div>
+        </div>
+        <button class="logout-button" id="admin-logout-button">Logout</button>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-middle-container">
+                <span class="footer-partners-text">I nostri partner:</span>
+                <div class="footer-partners-logos-container">
+                    <a href="https://www.fise.it/" target="_blank">
+                        <img src="/img/partner/fise.png" class="footer-partner-logo" alt="Partner Fise">
+                    </a>
+                    <a href="https://www.opesequitazione.it/" target="_blank">
+                        <img src="/img/partner/opes.png" class="footer-partner-logo" alt="Partner Opes">
+                    </a>
+                    <a href="https://www.asca.pet/" target="_blank">
+                        <img src="/img/partner/asca.png" class="footer-partner-logo" alt="Partner Asca">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right-container">
+                <ul class="footer-links-container">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about.html" class="footer-link">Chi Siamo</a></li>
+                    <li><a href="/activities.html" class="footer-link">Attività</a></li>
+                    <li><a href="/book_lesson.html" class="footer-link">Prenota Lezione</a></li>
+                    <li><a href="/contact.html" class="footer-link">Contatti</a></li>
+                </ul>
+                <div class="footer-socials-container">
+                    <a href="https://www.facebook.com/centroippicoilcavaliere" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/facebook.png" class="footer-social-icon" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/centroippicoilcavaliere/" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/instagram.png" class="footer-social-icon" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copyright-text">© 2025 Centro Ippico Il Cavaliere. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>

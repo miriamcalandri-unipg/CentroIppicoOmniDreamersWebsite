@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Utente - Centro Ippico Omni Dreamers</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="/private/script/private_script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo-container">
+                <img src="/img/logo.png" class="navbar-logo-img" alt="Logo del Centro Ippico Omni Dreamers">
+                <div class="navbar-logo-text-container">
+                    <span class="navbar-logo-text">Centro Ippico<br>OMNI DREAMERS</span>
+                </div>
+            </div>
+            <span class="hamburger-menu-icon" onclick="toggleMenu()">menu</span>
+            <ul class="menu">
+                <li class="menu-item"><a href="/" class="menu-anchor">
+                        <span class="menu-text">Home</span>
+                    </a></li>
+                <li class="menu-item"><a href="/about.html" class="menu-anchor">
+                        <span class="menu-text">Chi Siamo</span>
+                    </a></li>
+                <li class="menu-item">
+                    <a href="/activities.html" class="menu-anchor">
+                        <span class="menu-text">Attività</span>
+                    </a>
+                </li>
+                <li class="menu-item-current"><a href="/book_lesson.html" class="menu-anchor">
+                        <span class="menu-text">Prenota Lezione</span>
+                    </a></li>
+                <li class="menu-item"><a href="/contact.html" class="menu-anchor">
+                        <span class="menu-text">Contatti</span>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-content">
+        <section class="dashboard-section" id="user-info-section">
+            <h2>Informazioni personali</h2>
+            <div class="user-info-container">
+                <div class="user-info-row">
+                    <label class="user-info-label">Nome e Cognome:</label>
+                    <span id="user-name" class="user-info-value"></span>
+                </div>
+                <div class="user-info-row">
+                    <label class="user-info-label">Email:</label>
+                    <span id="user-email" class="user-info-value"></span>
+                </div>
+                <div class="user-info-row">
+                    <label class="user-info-label">Esperienza:</label>
+                    <span id="user-experience" class="user-info-value"></span>
+                </div>
+                <div class="user-info-row">
+                    <label class="user-info-label">Telefono:</label>
+                    <span id="user-phone" class="user-info-value"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Le tue prenotazioni</h2>
+            <div id="user-bookings" class="table-container">
+                <p>Caricamento prenotazioni...</p>
+            </div>
+            <button id="new-booking-button" class="dashboard-button submit-button">Prenota Nuova Lezione</button>
+        </section>
+        <section class="dashboard-section">
+            <h2> Le tue richieste </h2>
+            <div id="user-requests" class="table-container">
+                <p>Caricamento richieste...</p>
+            </div>
+            <button id="new-request-button" class="dashboard-button submit-button">Nuova Richiesta</button>
+        </section>
+        <div id="overlay" class="overlay">
+            <div id="new-request-popup">
+                <form id="new-request-form">
+                    <h2>Invia una richiesta</h2>
+                    <p> La richiesta verrà inviata agli amministratori e quando arriverà una risposta, potrai
+                        visualizzarla nella sezione Richieste.</p>
+                    <label for="new-request-content">Contenuto:</label>
+                    <textarea id="new-request-content" name="new-request-content" required></textarea>
+                    <button type="button" id="close-new-request-form" class="cancel-button">Annulla</button>
+                    <button type="submit" id="send-new-request-button" class="submit-button">Invia Richiesta</button>
+                </form>
+            </div>
+        </div>
+        <div class="logout-container">
+            <button id="user-logout-button" class="dashboard-button logout-button">Logout</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-middle-container">
+                <span class="footer-partners-text">I nostri partner:</span>
+                <div class="footer-partners-logos-container">
+                    <a href="https://www.fise.it/" target="_blank">
+                        <img src="/img/partner/fise.png" class="footer-partner-logo" alt="Partner Fise">
+                    </a>
+                    <a href="https://www.opesequitazione.it/" target="_blank">
+                        <img src="/img/partner/opes.png" class="footer-partner-logo" alt="Partner Opes">
+                    </a>
+                    <a href="https://www.asca.pet/" target="_blank">
+                        <img src="/img/partner/asca.png" class="footer-partner-logo" alt="Partner Asca">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right-container">
+                <ul class="footer-links-container">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about.html" class="footer-link">Chi Siamo</a></li>
+                    <li><a href="/activities.html" class="footer-link">Attività</a></li>
+                    <li><a href="/book_lesson.html" class="footer-link">Prenota Lezione</a></li>
+                    <li><a href="/contact.html" class="footer-link">Contatti</a></li>
+                </ul>
+                <div class="footer-socials-container">
+                    <a href="https://www.facebook.com/centroippicoilcavaliere" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/facebook.png" class="footer-social-icon" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/centroippicoilcavaliere/" target="_blank"
+                        class="footer-social-link">
+                        <img src="/img/social/instagram.png" class="footer-social-icon" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copyright-text">© 2025 Centro Ippico Il Cavaliere. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>
